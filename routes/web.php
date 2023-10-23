@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GreetingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/controller/comments/{greet1}', [GreetingController::class, 'greet_1']);
+
+Route::get('/controller/comments/freeword/{msg}', [GreetingController::class, 'greet_2']);
+
+
